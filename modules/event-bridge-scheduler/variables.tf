@@ -49,5 +49,23 @@ variable "schedule_target_input" {
 
 variable "schedule_task_role_name" {
   type        = string
-  description = "Name of the IAM role that EventBridge Scheduler will use for this target when the schedule is invoked"
+  description = "Name of the IAM role that EventBridge Scheduler will use for this target when the schedule is invoked, assumed prefix of name when role is created."
+}
+
+variable "schedule_task_role_policy_name" {
+  type        = string
+  description = "Name prefix of the IAM role policy."
+  default     = "policy_for_eventbridge_scheduler_execution_role"
+}
+
+variable "schedule_task_role_policy_description" {
+  type        = string
+  description = "Description of the IAM role policy."
+  default     = "Policy for EventBridge Scheduler execution role."
+}
+
+variable "schedule_task_role_policy_json_filename" {
+  type        = string
+  description = "Name of JSON formatted file of policy document that will be attached to IAM role, specify appropriate name if you want to create IAM role."
+  default = null
 }
