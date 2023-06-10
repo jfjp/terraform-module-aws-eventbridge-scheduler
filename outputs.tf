@@ -4,6 +4,11 @@ output "eventbridge_scheduler_arn" {
 }
 
 output "iam_role_name" {
-    description = "Name of IAM role"
-    value       = var.schedule_task_role_policy_json_filename == null ? data.aws_iam_role.this[0].name : aws_iam_role.this[0].name
+  description = "Name of IAM role"
+  value       = var.schedule_task_role_policy_json_filename == null ? data.aws_iam_role.this[0].name : aws_iam_role.this[0].name
+}
+
+output "schedule_group_name" {
+  description = "Name of schedule group"
+  value       = var.group_name
 }
