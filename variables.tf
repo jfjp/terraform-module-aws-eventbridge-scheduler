@@ -1,3 +1,9 @@
+variable "group_create" {
+  type        = bool
+  description = "Whether create new group or use existing."
+  default     = false
+}
+
 variable "group_name" {
   type        = string
   description = "Name of the schedule group"
@@ -67,5 +73,5 @@ variable "schedule_task_role_policy_description" {
 variable "schedule_task_role_policy_json_filename" {
   type        = string
   description = "Name of JSON formatted file of policy document that will be attached to IAM role, specify appropriate name if you want to create IAM role."
-  default = null
+  default     = null
 }
